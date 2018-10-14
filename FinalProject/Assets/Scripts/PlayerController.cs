@@ -2,19 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     public float moveSpeed;
     Animator anime;
     bool isPlayerMoving;
-    Vector2 lastMove;
+    public Vector2 lastMove;
     Rigidbody2D playerRigidBody;
+    private static bool playerExists; // static so all instances of player will use playerExists bool
 
 	// Use this for initialization
 	void Start ()
     {
         anime = GetComponent<Animator>();
         playerRigidBody = GetComponent<Rigidbody2D>();
+
+        if(!playerExists)
+        {
+            playerExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 	}
 	
 	// Update is called once per frame

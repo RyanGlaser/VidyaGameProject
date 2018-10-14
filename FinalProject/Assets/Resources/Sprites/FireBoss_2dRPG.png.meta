@@ -1,23 +1,23 @@
 fileFormatVersion: 2
-guid: 6ad33713ffafb08449b399c0daf39e4e
+guid: 72b83c30bded9d14a9744b003fb9bbcf
 TextureImporter:
   fileIDToRecycleName:
-    21300000: kingdomhearts_sora_0
-    21300002: kingdomhearts_sora_1
-    21300004: kingdomhearts_sora_2
-    21300006: kingdomhearts_sora_3
-    21300008: kingdomhearts_sora_4
-    21300010: kingdomhearts_sora_5
-    21300012: kingdomhearts_sora_6
-    21300014: kingdomhearts_sora_7
-    21300016: kingdomhearts_sora_8
-    21300018: kingdomhearts_sora_9
-    21300020: kingdomhearts_sora_10
-    21300022: kingdomhearts_sora_11
-    21300024: kingdomhearts_sora_12
-    21300026: kingdomhearts_sora_13
-    21300028: kingdomhearts_sora_14
-    21300030: kingdomhearts_sora_15
+    21300000: FireBoss_2dRPG_0
+    21300002: FireBoss_2dRPG_1
+    21300004: FireBoss_2dRPG_2
+    21300006: FireBoss_2dRPG_3
+    21300008: FireBoss_2dRPG_4
+    21300010: FireBoss_2dRPG_5
+    21300012: FireBoss_2dRPG_6
+    21300014: FireBoss_2dRPG_7
+    21300016: FireBoss_2dRPG_8
+    21300018: FireBoss_2dRPG_9
+    21300020: FireBoss_2dRPG_10
+    21300022: FireBoss_2dRPG_11
+    21300024: FireBoss_2dRPG_12
+    21300026: FireBoss_2dRPG_13
+    21300028: FireBoss_2dRPG_14
+    21300030: FireBoss_2dRPG_15
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -47,7 +47,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -61,7 +61,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 48
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kingdomhearts_sora_0
+      name: FireBoss_2dRPG_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 146
-        width: 29
-        height: 46
+        x: 7
+        y: 242
+        width: 66
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,19 +114,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c81f333e27f0a564681bcd6df471e652
+      spriteID: 9c7691e082b0ee1418dc41ae98089d13
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingdomhearts_sora_1
+      name: FireBoss_2dRPG_1
       rect:
         serializedVersion: 2
-        x: 34
-        y: 146
-        width: 29
-        height: 45
+        x: 89
+        y: 242
+        width: 62
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,19 +134,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a264b892103aa7347b31ee97f106953d
+      spriteID: 3c3ffd12fc87ee94aa041b96a204b4f7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingdomhearts_sora_2
+      name: FireBoss_2dRPG_2
       rect:
         serializedVersion: 2
-        x: 66
-        y: 146
-        width: 29
-        height: 46
+        x: 167
+        y: 242
+        width: 66
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,19 +154,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f26c1dd43c5063d4dbedbe9421e7742e
+      spriteID: 8b633e60895f93544a5b287db84dfc2e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingdomhearts_sora_3
+      name: FireBoss_2dRPG_3
       rect:
         serializedVersion: 2
-        x: 97
-        y: 145
-        width: 30
-        height: 46
+        x: 249
+        y: 242
+        width: 62
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,19 +174,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d660e9477f1b1104eb750182020e792a
+      spriteID: 4240054f3fa4b054d9b1dbfbef30b991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingdomhearts_sora_4
+      name: FireBoss_2dRPG_4
       rect:
         serializedVersion: 2
-        x: 6
-        y: 98
-        width: 24
-        height: 45
+        x: 20
+        y: 162
+        width: 43
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,19 +194,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b18ba2486b9e3f9458b9398d091d84e2
+      spriteID: d22fe8f6135b4be498fd6dfbbc4d076a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingdomhearts_sora_5
+      name: FireBoss_2dRPG_5
       rect:
         serializedVersion: 2
-        x: 38
-        y: 98
-        width: 24
-        height: 44
+        x: 100
+        y: 162
+        width: 44
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,19 +214,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b3545a088a256e4eba4e8d8c65bc090
+      spriteID: b8602f8f9874c7140815e7eb29f2744e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingdomhearts_sora_6
+      name: FireBoss_2dRPG_6
       rect:
         serializedVersion: 2
-        x: 70
-        y: 97
-        width: 24
-        height: 45
+        x: 179
+        y: 162
+        width: 43
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,19 +234,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 538491e4b101de2498b1d783d0269b7c
+      spriteID: 826c5df68c36530449cd8fbac6eb0aac
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingdomhearts_sora_7
+      name: FireBoss_2dRPG_7
       rect:
         serializedVersion: 2
-        x: 102
-        y: 98
-        width: 24
-        height: 44
+        x: 260
+        y: 162
+        width: 46
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,19 +254,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5a4f63aa23eb3f4f85e0e7e889e8a55
+      spriteID: 192da5b92203b084aba586815b79d264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingdomhearts_sora_8
+      name: FireBoss_2dRPG_8
       rect:
         serializedVersion: 2
-        x: 2
-        y: 50
-        width: 24
-        height: 45
+        x: 17
+        y: 82
+        width: 43
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,19 +274,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0a978c9790e29b46a214322ee5e3439
+      spriteID: 8ca07907195fc0e47915fe98d0cf31ea
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingdomhearts_sora_9
+      name: FireBoss_2dRPG_9
       rect:
         serializedVersion: 2
-        x: 34
-        y: 50
-        width: 24
-        height: 44
+        x: 96
+        y: 82
+        width: 44
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,19 +294,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6b528beefa4a554b8aa7d9d8ba633f0
+      spriteID: ee3ce4cca62081546acc98dafc9078c3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingdomhearts_sora_10
+      name: FireBoss_2dRPG_10
       rect:
         serializedVersion: 2
-        x: 66
-        y: 50
-        width: 24
-        height: 45
+        x: 177
+        y: 82
+        width: 43
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,19 +314,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 760d77ba4c417bc4f9e5815b75e90002
+      spriteID: d24431411d2a927419545d20bebeb570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingdomhearts_sora_11
+      name: FireBoss_2dRPG_11
       rect:
         serializedVersion: 2
-        x: 98
-        y: 50
-        width: 24
-        height: 44
+        x: 254
+        y: 82
+        width: 46
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,19 +334,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64f03dc061f968f40afd829f2eb7dc41
+      spriteID: 544665c03a761ec4f80060153552db46
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingdomhearts_sora_12
+      name: FireBoss_2dRPG_12
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 29
-        height: 46
+        x: 7
+        y: 4
+        width: 67
+        height: 76
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -354,19 +354,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25de31c878c252a4fbaa707b9fe008ac
+      spriteID: 26d85da2a3ccea04c937c3205b1bb60b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingdomhearts_sora_13
+      name: FireBoss_2dRPG_13
       rect:
         serializedVersion: 2
-        x: 34
-        y: 2
-        width: 29
-        height: 45
+        x: 89
+        y: 4
+        width: 63
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,19 +374,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48d97f39b39772b4884c17fd94b322de
+      spriteID: 5d16411490307a64e8a46ee1e4529664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingdomhearts_sora_14
+      name: FireBoss_2dRPG_14
       rect:
         serializedVersion: 2
-        x: 66
-        y: 2
-        width: 29
-        height: 46
+        x: 167
+        y: 4
+        width: 67
+        height: 76
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -394,19 +394,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4853f8cb9ea28424fa0b894741460380
+      spriteID: 17513b7198a445d45b4d11612121f8f5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kingdomhearts_sora_15
+      name: FireBoss_2dRPG_15
       rect:
         serializedVersion: 2
-        x: 98
-        y: 2
-        width: 29
-        height: 45
+        x: 249
+        y: 4
+        width: 63
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -414,7 +414,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54e06363242a5404e9c16638e1cc8ce3
+      spriteID: 852fbcc1c5615f34090c5df11725d8a1
       vertices: []
       indices: 
       edges: []
@@ -422,7 +422,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1fbdbcd3298c55046a72b536d74d186c
+    spriteID: aa24146e390586e4db054f038ffa9e93
     vertices: []
     indices: 
     edges: []
