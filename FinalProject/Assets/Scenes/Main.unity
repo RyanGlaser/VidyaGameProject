@@ -2794,7 +2794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf15b1976d818744e9797e5ae3017d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 
+  levelToLoad: AirWorldScene
 --- !u!483693784 &1311595212
 TilemapRenderer:
   m_ObjectHideFlags: 0
