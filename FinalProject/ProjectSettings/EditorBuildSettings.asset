@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EarthWorldScene.unity
     guid: 0c09cc4279a59614f85e187bc552d6fb
+  - enabled: 1
+    path: Assets/Scenes/AirWorldScene.unity
+    guid: 5bf70033dfd702642af97ee62a2979f9
   m_configObjects: {}
