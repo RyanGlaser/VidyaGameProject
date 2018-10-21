@@ -12,11 +12,13 @@ public class AirBossController : MonoBehaviour
     public float timeToMove;
     private float timeToMoveCounter;
     private Vector3 moveDir;
+    private Animator anim;
 
     // Use this for initialization
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         timeBetweenMoveCounter = timeBetweenMove;
         timeToMoveCounter = timeToMove;
     }
@@ -46,6 +48,10 @@ public class AirBossController : MonoBehaviour
                 moveDir = new Vector3(Random.Range(-1.0f, 1.0f) * moveSpeed, Random.Range(-1.0f, 1.0f) * moveSpeed, 0.0f);
             }
         }
+
+        anim.SetFloat("MoveX", moveDir.x);
+        anim.SetFloat("MoveY", moveDir.y);
+        anim.SetBool("isMoving", isMoving);
 
     }
 }

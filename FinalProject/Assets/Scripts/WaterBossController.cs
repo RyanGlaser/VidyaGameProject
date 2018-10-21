@@ -7,6 +7,7 @@ public class WaterBossController : MonoBehaviour
 
     public float moveSpeed;
     private Rigidbody2D myRigidBody;
+    private Animator anim; 
     private bool isMoving;
     public float timeBetweenMove;
     private float timeBetweenMoveCounter;
@@ -18,6 +19,7 @@ public class WaterBossController : MonoBehaviour
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         timeBetweenMoveCounter = timeBetweenMove;
         timeToMoveCounter = timeToMove;
     }
@@ -48,5 +50,8 @@ public class WaterBossController : MonoBehaviour
             }
         }
 
+        anim.SetFloat("MoveX", moveDir.x);
+        anim.SetFloat("MoveY", moveDir.y);
+        anim.SetBool("isMoving", isMoving);
     }
 }

@@ -6,6 +6,7 @@ public class EarthBossController : MonoBehaviour
 {
     public float moveSpeed;
     private Rigidbody2D myRigidBody;
+    private Animator anim;
     private bool isMoving;
     public float timeBetweenMove;
     private float timeBetweenMoveCounter;
@@ -17,6 +18,7 @@ public class EarthBossController : MonoBehaviour
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         timeBetweenMoveCounter = timeBetweenMove;
         timeToMoveCounter = timeToMove;
     }
@@ -47,5 +49,8 @@ public class EarthBossController : MonoBehaviour
             }
         }
 
+        anim.SetFloat("MoveX", moveDir.x);
+        anim.SetFloat("MoveY", moveDir.y);
+        anim.SetBool("isMoving", isMoving);
     }
 }

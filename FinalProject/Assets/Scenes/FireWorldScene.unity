@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 281652832}
   - component: {fileID: 281652833}
   - component: {fileID: 281652834}
+  - component: {fileID: 281652835}
   m_Layer: 0
   m_Name: FireBoss
   m_TagString: Untagged
@@ -241,7 +242,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.125, y: 4.6875}
+    oldSize: {x: 2.75, y: 4.3125}
     newSize: {x: 4.125, y: 4.6875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -250,6 +251,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.7512143, y: 3.82312}
   m_EdgeRadius: 0
+--- !u!95 &281652835
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 281652829}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69742eb101c4f8f46b5f72299b047220, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &471436154
 GameObject:
   m_ObjectHideFlags: 0

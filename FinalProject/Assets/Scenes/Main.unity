@@ -4023,6 +4023,26 @@ Prefab:
       propertyPath: m_PixelSnapping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 20349469958856346, guid: eb97be2c3d61b0349a5bf14f052cd7e6,
+        type: 2}
+      propertyPath: orthographic size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114234349344749914, guid: eb97be2c3d61b0349a5bf14f052cd7e6,
+        type: 2}
+      propertyPath: m_AssetsPPU
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114234349344749914, guid: eb97be2c3d61b0349a5bf14f052cd7e6,
+        type: 2}
+      propertyPath: m_RefResolutionX
+      value: 340
+      objectReference: {fileID: 0}
+    - target: {fileID: 114234349344749914, guid: eb97be2c3d61b0349a5bf14f052cd7e6,
+        type: 2}
+      propertyPath: m_RefResolutionY
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb97be2c3d61b0349a5bf14f052cd7e6, type: 2}
   m_IsPrefabAsset: 0

@@ -10343,6 +10343,7 @@ GameObject:
   - component: {fileID: 1544929342}
   - component: {fileID: 1544929341}
   - component: {fileID: 1544929345}
+  - component: {fileID: 1544929346}
   m_Layer: 0
   m_Name: EarthBoss
   m_TagString: Untagged
@@ -10364,7 +10365,7 @@ Rigidbody2D:
   m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -10468,6 +10469,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.51997, y: 4.91494}
   m_EdgeRadius: 0
+--- !u!95 &1544929346
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1544929340}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7581418d8075aad419e7c7e2e9cbe3a4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2089418074
 GameObject:
   m_ObjectHideFlags: 0

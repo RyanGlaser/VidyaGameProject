@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: AirBoss_faceLeft
+  m_Name: EarthBoss_MovingLeft
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -19,9 +19,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300004, guid: 1152cff6dc01ca44fa30884a154dda31, type: 3}
+      value: {fileID: 21300008, guid: 0a911dc52bd617b46b84bcb1a30f794d, type: 3}
     - time: 0.2857143
-      value: {fileID: 21300012, guid: 1152cff6dc01ca44fa30884a154dda31, type: 3}
+      value: {fileID: 21300010, guid: 0a911dc52bd617b46b84bcb1a30f794d, type: 3}
+    - time: 0.5714286
+      value: {fileID: 21300012, guid: 0a911dc52bd617b46b84bcb1a30f794d, type: 3}
+    - time: 0.85714287
+      value: {fileID: 21300014, guid: 0a911dc52bd617b46b84bcb1a30f794d, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -41,14 +45,16 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300004, guid: 1152cff6dc01ca44fa30884a154dda31, type: 3}
-    - {fileID: 21300012, guid: 1152cff6dc01ca44fa30884a154dda31, type: 3}
+    - {fileID: 21300008, guid: 0a911dc52bd617b46b84bcb1a30f794d, type: 3}
+    - {fileID: 21300010, guid: 0a911dc52bd617b46b84bcb1a30f794d, type: 3}
+    - {fileID: 21300012, guid: 0a911dc52bd617b46b84bcb1a30f794d, type: 3}
+    - {fileID: 21300014, guid: 0a911dc52bd617b46b84bcb1a30f794d, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.42857146
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

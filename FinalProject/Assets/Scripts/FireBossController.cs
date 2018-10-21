@@ -6,6 +6,7 @@ public class FireBossController : MonoBehaviour
 {
     public float moveSpeed;
     private Rigidbody2D myRigidBody;
+    private Animator anim; 
     private bool isMoving;
     public float timeBetweenMove;
     private float timeBetweenMoveCounter;
@@ -17,6 +18,7 @@ public class FireBossController : MonoBehaviour
 	void Start ()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         timeBetweenMoveCounter = timeBetweenMove;
         timeToMoveCounter = timeToMove;
 	}
@@ -46,6 +48,9 @@ public class FireBossController : MonoBehaviour
                 moveDir = new Vector3(Random.Range(-1.0f, 1.0f) * moveSpeed, Random.Range(-1.0f, 1.0f) * moveSpeed, 0.0f);
             }
         }
-    
-	}
+
+        anim.SetFloat("MoveX", moveDir.x);
+        anim.SetFloat("MoveY", moveDir.y);
+        anim.SetBool("isMoving", isMoving);
+    }
 }
