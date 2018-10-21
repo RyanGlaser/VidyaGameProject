@@ -4013,6 +4013,16 @@ Prefab:
       propertyPath: followTarget
       value: 
       objectReference: {fileID: 2026780915}
+    - target: {fileID: 114234349344749914, guid: eb97be2c3d61b0349a5bf14f052cd7e6,
+        type: 2}
+      propertyPath: m_UpscaleRT
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114234349344749914, guid: eb97be2c3d61b0349a5bf14f052cd7e6,
+        type: 2}
+      propertyPath: m_PixelSnapping
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb97be2c3d61b0349a5bf14f052cd7e6, type: 2}
   m_IsPrefabAsset: 0
@@ -13597,6 +13607,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1582628895411594, guid: 7c1ca003a2a74b646bba9e0a63691c22,
     type: 2}
   m_PrefabInternal: {fileID: 1714754066}
+--- !u!114 &2026780916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2026780915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85eaafa51c18dc948ac9e000bb8aa999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spell: {fileID: 1425237418690302, guid: 4a64a36e020a3144caeb9936792d21cc, type: 2}
 --- !u!1 &2048911116
 GameObject:
   m_ObjectHideFlags: 0
