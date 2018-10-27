@@ -17,7 +17,7 @@ public class CastSpell : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		if(Input.GetMouseButtonDown(0))
+		if(Input.GetMouseButtonDown(0) || Input.GetKeyDown("space"))
         {
             Instantiate(spell, playerPos.position, Quaternion.identity);
         }
