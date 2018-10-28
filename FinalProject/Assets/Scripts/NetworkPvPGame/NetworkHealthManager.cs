@@ -24,7 +24,7 @@ public class NetworkHealthManager : MonoBehaviour
         if(currentHealth <= 0)
         {
             currentHealth = 0;
-            Debug.Log("Dead: ");
+            Debug.Log("You Suck ");
         }
     }
 }
