@@ -77,7 +77,7 @@ public class NetworkPlayerController : NetworkBehaviour
     {
         spellLocation = spellSpawn.position;
 
-        var spell = (GameObject)Instantiate(spellPrefab, spellSpawn.position, Quaternion.identity);
+        var spell = (GameObject)Instantiate(spellPrefab, spellSpawn.position, spellSpawn.rotation);
         
         spell.GetComponent<Rigidbody2D>().velocity = (spellTargetDir - spellLocation).normalized * spellSpeed;
         //spell.transform.position = Vector2.MoveTowards(spell.transform.position, spellTarget, spellSpeed * Time.deltaTime);
