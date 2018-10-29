@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 14
-  timeBetweenMove: 0.5
+  timeBetweenMove: 0.45
   timeToMove: 1
 --- !u!114 &114954929772226070
 MonoBehaviour:
