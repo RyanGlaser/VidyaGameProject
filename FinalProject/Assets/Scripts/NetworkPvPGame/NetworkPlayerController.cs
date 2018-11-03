@@ -15,7 +15,10 @@ public class NetworkPlayerController : NetworkBehaviour
     Vector2 spellLocation;
     Vector2 spellTarget;
     public float spellSpeed;
-    public Transform spellSpawn;
+    public Transform spellSpawnTop;
+    public Transform spellSpawnBottom;
+    private Quaternion temp;
+
 
     // Use this for initialization
     void Start ()
@@ -65,9 +68,21 @@ public class NetworkPlayerController : NetworkBehaviour
         anime.SetFloat("LastMoveX", lastMove.x);
         anime.SetFloat("LastMoveY", lastMove.y);
 
+       
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space"))
         {
             spellTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Debug.Log(spellTarget);
+            if (spellTarget.y > transform.position.y)
+            {
+                spellLocation = spellSpawnTop.position;
+                temp = spellSpawnTop.rotation;
+            }
+            else
+            {
+                spellLocation = spellSpawnBottom.position;
+                temp = spellSpawnBottom.rotation;
+            }
             CmdSpell(spellTarget);
         }
     }
@@ -75,12 +90,21 @@ public class NetworkPlayerController : NetworkBehaviour
     [Command]
     void CmdSpell(Vector2 spellTargetDir)
     {
-        spellLocation = spellSpawn.position;
-
-        var spell = (GameObject)Instantiate(spellPrefab, spellSpawn.position, spellSpawn.rotation);
+       // Quaternion temp = Quaternion.identity;
+        /*if (spellTarget.y > transform.position.y)
+        {
+            spellLocation = spellSpawnTop.position;
+            temp = spellSpawnTop.rotation;
+        }
+        else
+        {
+            spellLocation = spellSpawnBottom.position;
+            temp = spellSpawnBottom.rotation;
+        }
+        */
+        var spell = (GameObject)Instantiate(spellPrefab, spellLocation, temp);
         
         spell.GetComponent<Rigidbody2D>().velocity = (spellTargetDir - spellLocation).normalized * spellSpeed;
-        //spell.transform.position = Vector2.MoveTowards(spell.transform.position, spellTarget, spellSpeed * Time.deltaTime);
         NetworkServer.Spawn(spell);
 
         Destroy(spell, 3.0f);

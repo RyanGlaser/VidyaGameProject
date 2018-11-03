@@ -11,6 +11,21 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1991269215185570}
   m_IsPrefabAsset: 1
+--- !u!1 &1110244952473530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4552321077131770}
+  m_Layer: 0
+  m_Name: SpellSpawnTop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1209328745692504
 GameObject:
   m_ObjectHideFlags: 0
@@ -20,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4248378191050072}
   m_Layer: 0
-  m_Name: SpellSpawn
+  m_Name: SpellSpawnBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,6 +123,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1209328745692504}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.02, y: -1.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4753535797709230}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4552321077131770
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1110244952473530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.02, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -121,10 +149,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1991269215185570}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0068213595, w: 0.99997675}
   m_LocalPosition: {x: -4.22, y: 1.22, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
+  - {fileID: 4552321077131770}
   - {fileID: 4248378191050072}
   - {fileID: 224676742735132950}
   m_Father: {fileID: 0}
@@ -304,8 +333,9 @@ MonoBehaviour:
   lastMove: {x: 0, y: 0}
   spellPrefab: {fileID: 1425237418690302, guid: ef3205c668c1f1144a0da6ae3f5369fc,
     type: 2}
-  spellSpeed: 10
-  spellSpawn: {fileID: 4248378191050072}
+  spellSpeed: 18
+  spellSpawnTop: {fileID: 4552321077131770}
+  spellSpawnBottom: {fileID: 4248378191050072}
 --- !u!114 &114721181031854234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -478,7 +508,7 @@ RectTransform:
   m_Children:
   - {fileID: 224906850361668620}
   m_Father: {fileID: 4753535797709230}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -500,9 +530,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 49.7, y: 0}
+  m_AnchoredPosition: {x: -0.0000038146973, y: 0.000000028941884}
   m_SizeDelta: {x: 100, y: 10}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &224906850361668620
 RectTransform:
   m_ObjectHideFlags: 1

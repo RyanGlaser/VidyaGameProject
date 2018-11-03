@@ -8,7 +8,7 @@ public class NetworkProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag != "Player")
+        if(collision.gameObject.tag == "Player")
         {
             var health = collision.gameObject.GetComponent<NetworkHealthManager>();
             if (health != null)
