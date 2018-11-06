@@ -15,9 +15,10 @@ public class NetworkPlayerController : NetworkBehaviour
     Vector2 spellLocation;
     Vector2 spellTarget;
     public float spellSpeed;
-    public Transform spellSpawnTop;
-    public Transform spellSpawnBottom;
     private Quaternion temp;
+    public Transform[] spellSpawnPositions; // 0 is top, 1 is bottom, 2 is left, 3 is right
+    public float spellCoolDown;
+    private float maxSpellCoolDown = 10;
 
 
     // Use this for initialization
@@ -35,7 +36,9 @@ public class NetworkPlayerController : NetworkBehaviour
             return;
         }
 
-        
+        if (spellCoolDown > 0)
+            spellCoolDown--;
+
         isPlayerMoving = false;
 
         if (Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
@@ -68,45 +71,39 @@ public class NetworkPlayerController : NetworkBehaviour
         anime.SetFloat("LastMoveX", lastMove.x);
         anime.SetFloat("LastMoveY", lastMove.y);
 
-       
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space"))
         {
             spellTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log(spellTarget);
-            if (spellTarget.y > transform.position.y)
+            if (spellCoolDown == 0)
             {
-                spellLocation = spellSpawnTop.position;
-                temp = spellSpawnTop.rotation;
+                spellTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                if (Input.GetAxisRaw("Vertical") > 0.5f && spellTarget.x > transform.position.x)
+                    spellLocation = spellSpawnPositions[3].position;
+                else if (Input.GetAxisRaw("Vertical") < -0.5f && spellTarget.x > transform.position.x)
+                    spellLocation = spellSpawnPositions[3].position;
+                else if (Input.GetAxisRaw("Vertical") > 0.5f && spellTarget.x < transform.position.x)
+                    spellLocation = spellSpawnPositions[2].position;
+                else if (Input.GetAxisRaw("Vertical") < -0.5f && spellTarget.x < transform.position.x)
+                    spellLocation = spellSpawnPositions[2].position;
+                else if (spellTarget.y > (transform.position.y + 0.25))
+                    spellLocation = spellSpawnPositions[0].position;
+                else if (spellTarget.y < (transform.position.y - 0.25))
+                    spellLocation = spellSpawnPositions[1].position;
+
+                CmdSpell(spellLocation, spellTarget);
+                spellCoolDown = maxSpellCoolDown;
             }
-            else
-            {
-                spellLocation = spellSpawnBottom.position;
-                temp = spellSpawnBottom.rotation;
-            }
-            CmdSpell(spellTarget);
+
+            
         }
     }
 
     [Command]
-    void CmdSpell(Vector2 spellTargetDir)
+    void CmdSpell(Vector2 spellTargetLocation, Vector2 spellTargetDir)
     {
-       // Quaternion temp = Quaternion.identity;
-        /*if (spellTarget.y > transform.position.y)
-        {
-            spellLocation = spellSpawnTop.position;
-            temp = spellSpawnTop.rotation;
-        }
-        else
-        {
-            spellLocation = spellSpawnBottom.position;
-            temp = spellSpawnBottom.rotation;
-        }
-        */
-        var spell = (GameObject)Instantiate(spellPrefab, spellLocation, temp);
-        
-        spell.GetComponent<Rigidbody2D>().velocity = (spellTargetDir - spellLocation).normalized * spellSpeed;
+        var spell = (GameObject)Instantiate(spellPrefab, spellTargetLocation, Quaternion.identity);
+        spell.GetComponent<Rigidbody2D>().velocity = (spellTargetDir - spellTargetLocation).normalized * spellSpeed;
         NetworkServer.Spawn(spell);
-
         Destroy(spell, 3.0f);
     }
 
