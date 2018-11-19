@@ -4031,7 +4031,7 @@ Prefab:
     - target: {fileID: 114234349344749914, guid: eb97be2c3d61b0349a5bf14f052cd7e6,
         type: 2}
       propertyPath: m_AssetsPPU
-      value: 16
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 114234349344749914, guid: eb97be2c3d61b0349a5bf14f052cd7e6,
         type: 2}

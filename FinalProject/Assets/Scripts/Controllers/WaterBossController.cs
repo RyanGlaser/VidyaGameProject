@@ -6,7 +6,6 @@ public class WaterBossController : MonoBehaviour
 {
 
     public float moveSpeed;
-    private Rigidbody2D myRigidBody;
     private Animator anim; 
     private bool isMoving;
     public float timeBetweenMove;
@@ -14,11 +13,12 @@ public class WaterBossController : MonoBehaviour
     public float timeToMove;
     private float timeToMoveCounter;
     private Vector3 moveDir;
+    public Transform[] movementPositions;
+    private Transform moveTarget;
 
     // Use this for initialization
     void Start()
     {
-        myRigidBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         timeBetweenMoveCounter = timeBetweenMove;
         timeToMoveCounter = timeToMove;
@@ -30,8 +30,8 @@ public class WaterBossController : MonoBehaviour
         if (isMoving)
         {
             timeToMoveCounter -= Time.deltaTime;
-            myRigidBody.velocity = moveDir;
-
+            transform.position = Vector2.MoveTowards(transform.position, moveTarget.position, moveSpeed * Time.deltaTime);
+            
             if (timeToMoveCounter < 0.0f)
             {
                 isMoving = false;
@@ -41,16 +41,16 @@ public class WaterBossController : MonoBehaviour
         else
         {
             timeBetweenMoveCounter -= Time.deltaTime;
-            myRigidBody.velocity = Vector2.zero;
             if (timeBetweenMoveCounter < 0.0f)
             {
                 isMoving = true;
                 timeToMoveCounter = timeToMove;
-                moveDir = new Vector3(Random.Range(-1.0f, 1.0f) * moveSpeed, Random.Range(-1.0f, 1.0f) * moveSpeed, 0.0f);
+                moveTarget = movementPositions[Random.Range(0, movementPositions.Length)];
+                moveDir = moveTarget.position;
             }
         }
 
-        anim.SetFloat("MoveX", moveDir.x);
+        anim.SetFloat("MoveX",moveDir.x);
         anim.SetFloat("MoveY", moveDir.y);
         anim.SetBool("isMoving", isMoving);
     }
