@@ -5,52 +5,35 @@ using UnityEngine;
 public class FireBossController : MonoBehaviour
 {
     public float moveSpeed;
-    private Rigidbody2D myRigidBody;
     private Animator anim; 
-    private bool isMoving;
-    public float timeBetweenMove;
-    private float timeBetweenMoveCounter;
-    public float timeToMove;
-    private float timeToMoveCounter;
     private Vector3 moveDir;
+    private bool isMoving;
+    private Transform target;
 
 	// Use this for initialization
 	void Start ()
     {
-        myRigidBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        timeBetweenMoveCounter = timeBetweenMove;
-        timeToMoveCounter = timeToMove;
+        target = GameObject.FindWithTag("Player").GetComponent<PlayerController>().transform;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-	    if (isMoving)
-        {
-            timeToMoveCounter -= Time.deltaTime;
-            myRigidBody.velocity = moveDir;
+	   if((Vector2.Distance(transform.position, target.position) < 15.0f))
+       {
+            isMoving = true;
+            transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+          //  moveDir = transform.position;
+       }
+       else
+       {
+            isMoving = false;
+       }
+        
 
-            if (timeToMoveCounter < 0.0f)
-            {
-                isMoving = false;
-                timeBetweenMoveCounter = timeBetweenMove;
-            }
-        }
-        else
-        {
-            timeBetweenMoveCounter -= Time.deltaTime;
-            myRigidBody.velocity = Vector2.zero;
-            if(timeBetweenMoveCounter < 0.0f)
-            {
-                isMoving = true;
-                timeToMoveCounter = timeToMove;
-                moveDir = new Vector3(Random.Range(-1.0f, 1.0f) * moveSpeed, Random.Range(-1.0f, 1.0f) * moveSpeed, 0.0f);
-            }
-        }
-
-        anim.SetFloat("MoveX", moveDir.x);
-        anim.SetFloat("MoveY", moveDir.y);
+        anim.SetFloat("MoveX", target.position.x);
+        anim.SetFloat("MoveY", target.position.y);
         anim.SetBool("isMoving", isMoving);
     }
 }
