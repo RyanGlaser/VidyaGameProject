@@ -44,8 +44,7 @@ public class FireBossController : MonoBehaviour
                 CastSpell(); // spell counter is less than zero so we can cast the boss spell
                 castSpellCounter = timeBetweenCastSpell;
             }
-
-        }
+       }
        else
        {
             isMoving = false;
