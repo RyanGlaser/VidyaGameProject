@@ -91,16 +91,16 @@ public class WaterBossController : MonoBehaviour
             {
                 default:
                     break;
-                case 0:
+                case 0: // left position
                     spellz[i].GetComponent<Rigidbody2D>().velocity = Vector2.left * spellSpeed;
                     break;
-                case 1:
+                case 1: // right position
                     spellz[i].GetComponent<Rigidbody2D>().velocity = Vector2.right * spellSpeed;
                     break;
-                case 2:
+                case 2: // up position
                     spellz[i].GetComponent<Rigidbody2D>().velocity = Vector2.up * spellSpeed;
                     break;
-                case 3:
+                case 3: // down position
                     spellz[i].GetComponent<Rigidbody2D>().velocity = Vector2.down * spellSpeed;
                     break;
             }
