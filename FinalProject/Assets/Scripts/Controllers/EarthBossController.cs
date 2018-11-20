@@ -5,52 +5,57 @@ using UnityEngine;
 public class EarthBossController : MonoBehaviour
 {
     public float moveSpeed;
-    private Rigidbody2D myRigidBody;
     private Animator anim;
     private bool isMoving;
-    public float timeBetweenMove;
-    private float timeBetweenMoveCounter;
-    public float timeToMove;
-    private float timeToMoveCounter;
-    private Vector3 moveDir;
+    private Transform target;
+
+    // ***** spell stuffz************
+    public float timeBetweenCastSpell;
+    private float castSpellCounter;
+    public GameObject spellPrefab;
+    public Transform spellSpawnPos;
+    public float spellSpeed;
+
 
     // Use this for initialization
     void Start()
     {
-        myRigidBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        timeBetweenMoveCounter = timeBetweenMove;
-        timeToMoveCounter = timeToMove;
+        target = GameObject.FindWithTag("Player").GetComponent<PlayerController>().transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isMoving)
+        if ((Vector2.Distance(transform.position, target.position) < 10.0f))
         {
-            timeToMoveCounter -= Time.deltaTime;
-            myRigidBody.velocity = moveDir;
+            isMoving = true;
+            transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
 
-            if (timeToMoveCounter < 0.0f)
+            if (castSpellCounter > 0.0f)
+                castSpellCounter -= Time.deltaTime;
+
+            if (castSpellCounter < 0.0f)
             {
-                isMoving = false;
-                timeBetweenMoveCounter = timeBetweenMove;
+                Vector2 spellDir = (target.position - spellSpawnPos.position);
+                CastSpell(spellDir); // spell counter is less than zero so we can cast the boss spell
+                castSpellCounter = timeBetweenCastSpell;
             }
         }
         else
         {
-            timeBetweenMoveCounter -= Time.deltaTime;
-            myRigidBody.velocity = Vector2.zero;
-            if (timeBetweenMoveCounter < 0.0f)
-            {
-                isMoving = true;
-                timeToMoveCounter = timeToMove;
-                moveDir = new Vector3(Random.Range(-1.0f, 1.0f) * moveSpeed, Random.Range(-1.0f, 1.0f) * moveSpeed, 0.0f);
-            }
+            isMoving = false;
         }
 
-        anim.SetFloat("MoveX", moveDir.x);
-        anim.SetFloat("MoveY", moveDir.y);
+        anim.SetFloat("MoveX", transform.position.x);
+        anim.SetFloat("MoveY", transform.position.y);
         anim.SetBool("isMoving", isMoving);
+    }
+
+    public void CastSpell(Vector2 spellDir)
+    {
+        GameObject spell = Instantiate(spellPrefab, spellSpawnPos.position, transform.rotation);
+        spell.GetComponent<Rigidbody2D>().velocity = spellDir * spellSpeed;
+        Destroy(spell, 3.0f);
     }
 }
