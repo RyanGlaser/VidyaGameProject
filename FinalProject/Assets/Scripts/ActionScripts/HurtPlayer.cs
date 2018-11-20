@@ -18,11 +18,15 @@ public class HurtPlayer : MonoBehaviour
 		
 	}
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-       if(collision.gameObject.name == "Player")
+       if(collision.gameObject.name != "Enemy")
         {
-            collision.gameObject.GetComponent<PlayerHealthManager>().DamagePlayer(damageAmount);
+            if (collision.gameObject.name == "Player")
+            {
+                collision.gameObject.GetComponent<PlayerHealthManager>().DamagePlayer(damageAmount);
+                Destroy(gameObject);
+            }
         }
     }
 }

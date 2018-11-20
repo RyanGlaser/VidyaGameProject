@@ -31,4 +31,9 @@ public class PlayerHealthManager : MonoBehaviour
     {
         playerCurrentHealth = playerMaxHealth;
     }
+
+    public void HealPlayer(int healAmt)
+    {
+        playerCurrentHealth += healAmt;
+    }
 }
