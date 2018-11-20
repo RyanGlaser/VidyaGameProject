@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 532287722}
   m_Layer: 0
   m_Name: AirBoss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -394,7 +394,7 @@ MonoBehaviour:
   timeBetweenCastSpell: 2
   spellPrefab: {fileID: 1603814310127320, guid: 1811c3c9fa3179e4190ec50167fc21d7,
     type: 2}
-  spellSpeed: 3
+  spellSpeed: 5
 --- !u!95 &532287722
 Animator:
   serializedVersion: 3
@@ -11360,6 +11360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0af010be0b6ac4895d39de9afa898c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateSpeed: 90
 --- !u!1 &1634705396
 GameObject:
   m_ObjectHideFlags: 0

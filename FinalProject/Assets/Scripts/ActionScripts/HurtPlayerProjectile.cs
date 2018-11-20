@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HurtPlayer : MonoBehaviour
+public class HurtPlayerProjectile: MonoBehaviour
 {
     public int damageAmount;
 
@@ -25,7 +25,8 @@ public class HurtPlayer : MonoBehaviour
             if (collision.gameObject.name == "Player")
             {
                 collision.gameObject.GetComponent<PlayerHealthManager>().DamagePlayer(damageAmount);
-                Destroy(gameObject);
+                if(gameObject.name != "Enemy")
+                    Destroy(gameObject);
             }
         }
     }

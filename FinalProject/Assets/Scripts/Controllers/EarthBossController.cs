@@ -9,6 +9,14 @@ public class EarthBossController : MonoBehaviour
     private bool isMoving;
     private Transform target;
 
+    // ***** spell stuffz************
+    public float timeBetweenCastSpell;
+    private float castSpellCounter;
+    public GameObject spellPrefab;
+    public Transform spellSpawnPos;
+    public float spellSpeed;
+
+
     // Use this for initialization
     void Start()
     {
@@ -23,6 +31,16 @@ public class EarthBossController : MonoBehaviour
         {
             isMoving = true;
             transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+
+            if (castSpellCounter > 0.0f)
+                castSpellCounter -= Time.deltaTime;
+
+            if (castSpellCounter < 0.0f)
+            {
+                Vector2 spellDir = (target.position - spellSpawnPos.position);
+                CastSpell(spellDir); // spell counter is less than zero so we can cast the boss spell
+                castSpellCounter = timeBetweenCastSpell;
+            }
         }
         else
         {
@@ -32,5 +50,12 @@ public class EarthBossController : MonoBehaviour
         anim.SetFloat("MoveX", transform.position.x);
         anim.SetFloat("MoveY", transform.position.y);
         anim.SetBool("isMoving", isMoving);
+    }
+
+    public void CastSpell(Vector2 spellDir)
+    {
+        GameObject spell = Instantiate(spellPrefab, spellSpawnPos.position, transform.rotation);
+        spell.GetComponent<Rigidbody2D>().velocity = spellDir * spellSpeed;
+        Destroy(spell, 3.0f);
     }
 }
