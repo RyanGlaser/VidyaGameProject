@@ -5,6 +5,7 @@ using UnityEngine;
 public class HurtPlayerProjectile: MonoBehaviour
 {
     public int damageAmount;
+    public GameObject damageEffect;
 
 	// Use this for initialization
 	void Start ()
@@ -25,6 +26,7 @@ public class HurtPlayerProjectile: MonoBehaviour
             if (collision.gameObject.name == "Player")
             {
                 collision.gameObject.GetComponent<PlayerHealthManager>().DamagePlayer(damageAmount);
+                Instantiate(damageEffect, transform.position, transform.rotation);
                 if(gameObject.name != "Enemy")
                     Destroy(gameObject);
             }
