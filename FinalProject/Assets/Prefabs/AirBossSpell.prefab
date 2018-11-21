@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 10
+  damageEffect: {fileID: 1387552744867176, guid: ac42da35a05cf5544b43539b2c41296b,
+    type: 2}
 --- !u!212 &212185234648912804
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -14,6 +14,7 @@ public class WaterBossController : MonoBehaviour
     private Vector3 moveDir;
     private Transform moveTarget;
     private float timeBetweenMoveCounter;
+    public bool inFight;
 
     // **** spell stuffz ************* 
     public Transform[] spellSpawnPositions;
@@ -37,7 +38,7 @@ public class WaterBossController : MonoBehaviour
         timeToMoveCounter = timeToMove;
         castSpellCounter = timeBetweenCastSpell;
         target = GameObject.FindWithTag("Player").GetComponent<PlayerController>().transform;
-        spellz = new GameObject[4];
+        spellz = new GameObject[8];
     }
 
     // Update is called once per frame
@@ -68,6 +69,7 @@ public class WaterBossController : MonoBehaviour
 
         if ((Vector2.Distance(transform.position, target.position) < 15.0f))
         {
+            inFight = true;
             if (castSpellCounter > 0.0f)
                 castSpellCounter -= Time.deltaTime;
 
@@ -102,6 +104,18 @@ public class WaterBossController : MonoBehaviour
                     break;
                 case 3: // down position
                     spellz[i].GetComponent<Rigidbody2D>().velocity = Vector2.down * spellSpeed;
+                    break;
+                case 4: // down position
+                    spellz[i].GetComponent<Rigidbody2D>().velocity = (spellSpawnPositions[i].position - transform.position) * spellSpeed;
+                    break;
+                case 5: // down position
+                    spellz[i].GetComponent<Rigidbody2D>().velocity = (spellSpawnPositions[i].position - transform.position) * spellSpeed;
+                    break;
+                case 6: // down position
+                    spellz[i].GetComponent<Rigidbody2D>().velocity = (spellSpawnPositions[i].position - transform.position) * spellSpeed;
+                    break;
+                case 7: // down position
+                    spellz[i].GetComponent<Rigidbody2D>().velocity = (spellSpawnPositions[i].position - transform.position) * spellSpeed;
                     break;
             }
             Destroy(spellz[i], 3.0f);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class HurtPlayerMelee: MonoBehaviour
 {
     public int damageAmount;
+    public GameObject damageEffect;
 
 	// Use this for initialization
 	void Start ()
@@ -25,6 +26,7 @@ public class HurtPlayerMelee: MonoBehaviour
             if (collision.gameObject.name == "Player")
             {
                 collision.gameObject.GetComponent<PlayerHealthManager>().DamagePlayer(damageAmount);
+                Instantiate(damageEffect, collision.gameObject.transform.position, transform.rotation);
             }
         }
     }

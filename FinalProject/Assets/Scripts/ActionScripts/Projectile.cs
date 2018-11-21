@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private Vector2 target;
-    public float speed; 
-
+    private Vector3 target;
+    public float speed;
+    public int damageAmount;
 	// Use this for initialization
 	void Start ()
     {
@@ -16,11 +16,15 @@ public class Projectile : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime * speed);
+	}
 
-        if(Vector2.Distance(transform.position, target) < 0.001f)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Enemy")
         {
+            collision.gameObject.GetComponent<EnemyHealthManager>().DamageEnemy(damageAmount);
             Destroy(gameObject);
         }
-	}
+    }
 }
