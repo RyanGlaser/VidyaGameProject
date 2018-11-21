@@ -17,14 +17,16 @@ public class Projectile : MonoBehaviour
 	void Update ()
     {
         transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime * speed);
+        Destroy(gameObject, 2.0f);
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<EnemyHealthManager>().DamageEnemy(damageAmount);
             Destroy(gameObject);
         }
     }
+
 }

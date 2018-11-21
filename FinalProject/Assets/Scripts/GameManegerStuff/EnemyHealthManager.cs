@@ -7,8 +7,6 @@ public class EnemyHealthManager : MonoBehaviour {
 
     public int enemyMaxHealth;
     public int enemyCurrentHealth;
-    public Slider healthBar;
-    public Text HPText;
 
     // Use this for initialization
     void Start()
@@ -39,4 +37,6 @@ public class EnemyHealthManager : MonoBehaviour {
     {
         enemyCurrentHealth += healAmt;
     }
+
+  
 }

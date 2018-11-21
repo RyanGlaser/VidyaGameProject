@@ -24,6 +24,7 @@ public class WaterBossController : MonoBehaviour
     private float castSpellCounter;
     private GameObject[] spellz;
     private Transform target;
+    
 
 
 
@@ -105,20 +106,20 @@ public class WaterBossController : MonoBehaviour
                 case 3: // down position
                     spellz[i].GetComponent<Rigidbody2D>().velocity = Vector2.down * spellSpeed;
                     break;
-                case 4: // down position
+                case 4: // down left position
                     spellz[i].GetComponent<Rigidbody2D>().velocity = (spellSpawnPositions[i].position - transform.position) * spellSpeed;
                     break;
-                case 5: // down position
+                case 5: // down right position
                     spellz[i].GetComponent<Rigidbody2D>().velocity = (spellSpawnPositions[i].position - transform.position) * spellSpeed;
                     break;
-                case 6: // down position
+                case 6: // up right position
                     spellz[i].GetComponent<Rigidbody2D>().velocity = (spellSpawnPositions[i].position - transform.position) * spellSpeed;
                     break;
-                case 7: // down position
+                case 7: // up left position
                     spellz[i].GetComponent<Rigidbody2D>().velocity = (spellSpawnPositions[i].position - transform.position) * spellSpeed;
                     break;
             }
-            Destroy(spellz[i], 3.0f);
+            Destroy(spellz[i], 2.0f);
         }
             
     }
@@ -129,4 +130,5 @@ public class WaterBossController : MonoBehaviour
         anim.SetFloat("MoveY", moveDir.y);
         anim.SetBool("isMoving", isMoving);
     }
+
 }
