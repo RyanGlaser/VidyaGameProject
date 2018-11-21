@@ -6,12 +6,21 @@ public class PlayerStartPoint : MonoBehaviour
 {
     private PlayerController player;
     private CameraController mainCamera;
-
+    public static bool startPointExists;
     public Vector2 startDirection;
 
 	// Use this for initialization
 	void Start ()
     {
+        if (!startPointExists)
+        {
+            startPointExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         player = FindObjectOfType<PlayerController>(); 
         player.transform.position = transform.position; // moves the player to our starting point in a scence
         player.lastMove = startDirection;

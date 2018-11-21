@@ -7,6 +7,7 @@ public class EnemyHealthManager : MonoBehaviour {
 
     public int enemyMaxHealth;
     public int enemyCurrentHealth;
+    public GameObject damageEffect;
 
     // Use this for initialization
     void Start()
@@ -26,6 +27,7 @@ public class EnemyHealthManager : MonoBehaviour {
     public void DamageEnemy(int damageAmt)
     {
         enemyCurrentHealth -= damageAmt;
+        Instantiate(damageEffect, transform.position, transform.rotation);
     }
 
     public void SetMaxHealth()
