@@ -6,6 +6,7 @@ public class PlayerHealthManager : MonoBehaviour
 {
     public int playerMaxHealth;
     public int playerCurrentHealth;
+    public bool isAlive = true;
 
 	// Use this for initialization
 	void Start ()
@@ -18,6 +19,7 @@ public class PlayerHealthManager : MonoBehaviour
     {
 		if(playerCurrentHealth <= 0)
         {
+            isAlive = false;
             gameObject.SetActive(false);
         }
 	}
