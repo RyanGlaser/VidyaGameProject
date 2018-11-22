@@ -26,7 +26,10 @@ public class PlayerHealthManager : MonoBehaviour
 
     public void DamagePlayer(int damageAmt)
     {
-        playerCurrentHealth -= damageAmt;
+        if (playerCurrentHealth <= 0)
+            return;
+        else
+            playerCurrentHealth -= damageAmt;
     }
 
     public void SetMaxHealth()
