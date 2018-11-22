@@ -38,7 +38,9 @@ public class GameOverMenu : MonoBehaviour
     public void Restart()
     {
         gameOverMenuUI.SetActive(false);
-
+        player.SetActive(true);
+        playerHealth.SetMaxHealth();
+        playerHealth.isAlive = true;
         SceneManager.LoadScene("Main");
     }
 
