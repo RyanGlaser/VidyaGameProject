@@ -15,16 +15,14 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject gameWonMenuUI;
     private PlayerHealthManager playerHealth;
-    private static bool [] bossWinConditions = {true, // 1. Water
-                                                true, // 2. Earth
-                                                true, // 3. Fire
-                                                true};// 4. Air
+    private static bool[] BossWinConditions;
                                                    
 
     // Use this for initialization
     void Start()
     {
-
+        ResetBosses();
+        
         if (!gameManagerExists)
         {
             Debug.Log("creating GameManager (didn't exist)");
@@ -32,22 +30,23 @@ public class GameManager : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(transform.gameObject);
         }
-        else
+       /* else
         {
             Debug.Log("destroying gameObject (GameManager?)");
             Destroy(gameObject);
-        }
+        } */
     }
 
     // Update is called once per frame
     void Update()
     {
         //If ALL bosses are dead, show win screen
-        if (!bossWinConditions[0] && 
-            !bossWinConditions[1] &&
-            !bossWinConditions[2] &&
-            !bossWinConditions[3])
+        if (!BossWinConditions[0] && 
+            !BossWinConditions[1] &&
+            !BossWinConditions[2] &&
+            !BossWinConditions[3])
         {
+            Debug.Log("Launching Victory Screen");
             gameWonMenuUI.SetActive(true);
         }
 
@@ -55,9 +54,18 @@ public class GameManager : MonoBehaviour
 
     //this is for each boss controller to call
     //when it has died
-    public void bossDown (int num)
+    public void BossDown (int num)
     {
-        Debug.Log("Boss: " + num + " killed in bossDown().");
-        bossWinConditions[num] = false;
+        Debug.Log("Boss: " + num + " killed in BossDown().");
+        BossWinConditions[num] = false;
+    }
+
+    public void ResetBosses()
+    {
+        Debug.Log("Resetting Bosses");
+        BossWinConditions = new bool [] {true, // 1. Water
+                                         true, // 2. Earth
+                                         true, // 3. Fire
+                                         true};// 4. Air
     }
 }

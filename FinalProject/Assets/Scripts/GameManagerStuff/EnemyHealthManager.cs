@@ -40,7 +40,7 @@ public class EnemyHealthManager : MonoBehaviour {
             {
                 //this is to signal to our gameManager that boss is dead
                 Debug.Log("Killing boss: " + bossNum);
-                GameManager._instance.bossDown(bossNum);
+                GameManager._instance.BossDown(bossNum);
                 Debug.Log("Boss killed.");
             }
         }

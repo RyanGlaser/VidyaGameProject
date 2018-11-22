@@ -37,6 +37,7 @@ public class GameWonMenu : MonoBehaviour {
         gameWinMenuUI.SetActive(false);
         player.SetActive(true);
         playerHealth.SetMaxHealth();
+        GameManager._instance.ResetBosses();
         SceneManager.LoadScene("Main");
     }
 
