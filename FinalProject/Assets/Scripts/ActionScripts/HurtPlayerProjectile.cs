@@ -21,13 +21,13 @@ public class HurtPlayerProjectile: MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       if(collision.gameObject.name != "Enemy")
+       if(collision.gameObject.tag != "Enemy")
         {
             if (collision.gameObject.name == "Player")
             {
                 collision.gameObject.GetComponent<PlayerHealthManager>().DamagePlayer(damageAmount);
                 Instantiate(damageEffect, transform.position, transform.rotation);
-                if(gameObject.name != "Enemy")
+                if(gameObject.tag != "Enemy")
                     Destroy(gameObject);
             }
         }
