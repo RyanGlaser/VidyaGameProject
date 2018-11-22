@@ -35782,6 +35782,10 @@ Prefab:
         type: 2}
       propertyPath: bossNum
       value: 1
+    - target: {fileID: 114006543395746388, guid: f842e3654377b61478d9160d7bda0018,
+        type: 2}
+      propertyPath: spellSpeed
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f842e3654377b61478d9160d7bda0018, type: 2}

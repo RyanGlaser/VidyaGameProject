@@ -22,6 +22,7 @@ public class EarthBossController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").GetComponent<PlayerController>().transform;
+        castSpellCounter = timeBetweenCastSpell;
     }
 
     // Update is called once per frame
@@ -37,7 +38,7 @@ public class EarthBossController : MonoBehaviour
 
             if (castSpellCounter < 0.0f)
             {
-                Vector2 spellDir = (target.position - spellSpawnPos.position);
+                Vector2 spellDir = (target.position - spellSpawnPos.position).normalized * spellSpeed;
                 CastSpell(spellDir); // spell counter is less than zero so we can cast the boss spell
                 castSpellCounter = timeBetweenCastSpell;
             }
@@ -52,10 +53,10 @@ public class EarthBossController : MonoBehaviour
         anim.SetBool("isMoving", isMoving);
     }
 
-    public void CastSpell(Vector2 spellDir)
+    public void CastSpell(Vector2 spellDirection)
     {
-        GameObject spell = Instantiate(spellPrefab, spellSpawnPos.position, transform.rotation);
-        spell.GetComponent<Rigidbody2D>().velocity = spellDir * spellSpeed;
+        GameObject spell = Instantiate(spellPrefab, spellSpawnPos.position, spellSpawnPos.rotation);
+        spell.GetComponent<Rigidbody2D>().velocity = new Vector2(spellDirection.x, spellDirection.y);
         Destroy(spell, 3.0f);
     }
 }

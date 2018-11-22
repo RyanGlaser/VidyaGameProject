@@ -9,6 +9,7 @@ public class GameOverMenu : MonoBehaviour
     public GameObject player;
     public GameObject gameOverMenuUI;
     private PlayerHealthManager playerHealth;
+    public Transform playerSpawnPos;
 
 	// Use this for initialization
 	void Start ()
@@ -42,6 +43,7 @@ public class GameOverMenu : MonoBehaviour
         player.SetActive(true);
         playerHealth.SetMaxHealth();
         playerHealth.isAlive = true;
+        player.transform.position = playerSpawnPos.position;
         SceneManager.LoadScene("Main");
     }
 

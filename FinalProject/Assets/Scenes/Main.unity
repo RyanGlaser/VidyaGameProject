@@ -2347,6 +2347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2026780915}
   gameOverMenuUI: {fileID: 1795117202}
+  playerSpawnPos: {fileID: 645588011}
 --- !u!1 &498374396
 GameObject:
   m_ObjectHideFlags: 0
