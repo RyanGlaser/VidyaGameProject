@@ -10,6 +10,7 @@ public class GameOverMenu : MonoBehaviour
     public GameObject gameOverMenuUI;
     private PlayerHealthManager playerHealth;
     public Transform playerSpawnPos;
+
 	// Use this for initialization
 	void Start ()
     {
