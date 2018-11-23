@@ -30,11 +30,6 @@ public class GameManager : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(transform.gameObject);
         }
-       /* else
-        {
-            Debug.Log("destroying gameObject (GameManager?)");
-            Destroy(gameObject);
-        } */
     }
 
     // Update is called once per frame

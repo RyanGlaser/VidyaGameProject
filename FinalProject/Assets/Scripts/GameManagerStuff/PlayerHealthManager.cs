@@ -8,6 +8,7 @@ public class PlayerHealthManager : MonoBehaviour
     public int playerCurrentHealth;
     public bool isAlive = true;
 
+
 	// Use this for initialization
 	void Start ()
     {
