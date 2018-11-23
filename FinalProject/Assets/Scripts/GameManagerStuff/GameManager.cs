@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject gameWonMenuUI;
     private PlayerHealthManager playerHealth;
-    private static bool[] BossWinConditions;
+    private bool [] BossWinConditions;
                                                    
 
     // Use this for initialization
@@ -41,10 +41,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //If ALL bosses are dead, show win screen
-        if (!BossWinConditions[0] && 
-            !BossWinConditions[1] &&
-            !BossWinConditions[2] &&
-            !BossWinConditions[3])
+        if  (CheckWin())
         {
             Debug.Log("Launching Victory Screen");
             gameWonMenuUI.SetActive(true);
@@ -63,9 +60,22 @@ public class GameManager : MonoBehaviour
     public void ResetBosses()
     {
         Debug.Log("Resetting Bosses");
-        BossWinConditions = new bool [] {true, // 1. Water
-                                         true, // 2. Earth
-                                         true, // 3. Fire
-                                         true};// 4. Air
+        BossWinConditions = new bool [] {true, // 0. Water
+                                         true, // 1. Earth
+                                         true, // 2. Fire
+                                         true};// 3. Air
     }
+
+    private bool CheckWin()
+    {
+        if (BossWinConditions[0] == false)
+            if (BossWinConditions[1] == false)
+                if (BossWinConditions[2] == false)
+                    if (BossWinConditions[3] == false)
+                        return true;
+
+
+        return false;
+    }
+
 }

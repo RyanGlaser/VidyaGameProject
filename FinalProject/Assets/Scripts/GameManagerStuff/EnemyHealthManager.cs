@@ -26,8 +26,6 @@ public class EnemyHealthManager : MonoBehaviour {
     void Start()
     {
         SetMaxHealth();
-        Debug.Log("Before GameManager Initialization.");
-        Debug.Log("After GameManager Initialization.");
     }
 
     // Update is called once per frame

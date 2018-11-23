@@ -11,12 +11,22 @@ public class GameOverMenu : MonoBehaviour
     private PlayerHealthManager playerHealth;
     public Transform playerSpawnPos;
 
+    AudioSource sourceSelect;
+    AudioSource sourceVictory;
+
 	// Use this for initialization
 	void Start ()
     {
         if (!gameOverExists)
         {
             gameOverExists = true;
+
+            sourceVictory = GetComponent<AudioSource>();
+            sourceSelect = GetComponent<AudioSource>();
+
+            if (sourceVictory == null /*|| sourceSelect == null*/)
+                Debug.Log("One of the audio sources in GameOver menu is bad");
+            
             DontDestroyOnLoad(transform.gameObject);
         }
         else
@@ -33,12 +43,17 @@ public class GameOverMenu : MonoBehaviour
     {
 		if(playerHealth.isAlive == false)
         {
+            sourceVictory.Play();
+            while (sourceVictory.isPlaying) {}
             gameOverMenuUI.SetActive(true);
+
         }
 	}
 
     public void Restart()
     {
+        sourceSelect.Play();
+
         gameOverMenuUI.SetActive(false);
         player.SetActive(true);
         playerHealth.SetMaxHealth();
@@ -49,6 +64,7 @@ public class GameOverMenu : MonoBehaviour
 
     public void Quit()
     {
+        sourceSelect.Play();
         Application.Quit();
     }
 }
