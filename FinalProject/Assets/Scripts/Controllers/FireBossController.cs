@@ -18,11 +18,13 @@ public class FireBossController : MonoBehaviour
     public float spellSpeed;
     private float castSpellCounter;
     private GameObject[] spellz;
+    private SoundManager dj;
 
     // Use this for initialization
     void Start ()
     {
         anim = GetComponent<Animator>();
+        dj = SoundManager._instance;
         target = GameObject.FindWithTag("Player").GetComponent<PlayerController>().transform;
         castSpellCounter = timeBetweenCastSpell;
         spellz = new GameObject[4];
@@ -78,6 +80,7 @@ public class FireBossController : MonoBehaviour
                     spellz[i].GetComponent<Rigidbody2D>().velocity = (spellDirections[i].position - spellSpawnPositions[i].position) * spellSpeed;
                     break;
             }
+            dj.BossAttackSFX("FireBossSFX");
             Destroy(spellz[i], 3.0f);
         }
     }

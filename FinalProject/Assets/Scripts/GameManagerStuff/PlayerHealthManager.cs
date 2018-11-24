@@ -21,6 +21,7 @@ public class PlayerHealthManager : MonoBehaviour
 		if(playerCurrentHealth <= 0)
         {
             isAlive = false;
+            Debug.Log("isAlive is false");
             gameObject.SetActive(false);
         }
 	}

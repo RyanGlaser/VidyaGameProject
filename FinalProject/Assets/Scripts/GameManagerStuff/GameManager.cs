@@ -16,12 +16,18 @@ public class GameManager : MonoBehaviour
     public GameObject gameWonMenuUI;
     private PlayerHealthManager playerHealth;
     private bool [] BossWinConditions;
+    private string currSceneName = null;
+    private SoundManager dj;
                                                    
 
     // Use this for initialization
     void Start()
     {
         ResetBosses();
+        dj = SoundManager._instance;
+        currSceneName = SceneManager.GetActiveScene().name;
+        if (currSceneName == null)
+            Debug.Log("Current scene name is null in GameManager.Start()");
         
         if (!gameManagerExists)
         {
@@ -36,10 +42,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //If ALL bosses are dead, show win screen
-        if  (CheckWin())
+        if (CheckWin())
         {
+            dj.OnWinLose(true);
             Debug.Log("Launching Victory Screen");
             gameWonMenuUI.SetActive(true);
+            ResetBosses();
         }
 
     }

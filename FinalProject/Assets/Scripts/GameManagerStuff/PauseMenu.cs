@@ -9,12 +9,14 @@ public class PauseMenu : MonoBehaviour
     public static bool pauseMenuExists;
     public GameObject pauseMenuUI;
     public GameObject player;
+    private SoundManager dj;
 
     void Start()
     {
         if (!pauseMenuExists)
         {
-            pauseMenuExists = true; 
+            pauseMenuExists = true;
+            dj = SoundManager._instance;
             DontDestroyOnLoad(transform.gameObject);
         }
         else
@@ -41,6 +43,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume ()
     {
+        dj.PlayMenuEffect();
         player.SetActive(true);
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
@@ -49,6 +52,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause ()
     {
+        dj.PlayMenuEffect();
         player.SetActive(false);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;

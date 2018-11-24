@@ -24,7 +24,7 @@ public class WaterBossController : MonoBehaviour
     private float castSpellCounter;
     private GameObject[] spellz;
     private Transform target;
-    private AudioSource WaterSpellSFX;
+    private SoundManager dj;
 
     // **** animator object **************
     private Animator anim;
@@ -37,7 +37,7 @@ public class WaterBossController : MonoBehaviour
         timeToMoveCounter = timeToMove;
         castSpellCounter = timeBetweenCastSpell;
         target = GameObject.FindWithTag("Player").GetComponent<PlayerController>().transform;
-        WaterSpellSFX = GameObject.Find("WaterBossSFX").GetComponent<AudioSource>();
+        dj = SoundManager._instance;
         spellz = new GameObject[8];
     }
 
@@ -118,7 +118,7 @@ public class WaterBossController : MonoBehaviour
                     spellz[i].GetComponent<Rigidbody2D>().velocity = (spellSpawnPositions[i].position - transform.position) * spellSpeed;
                     break;
             }
-            WaterSpellSFX.Play();
+            dj.BossAttackSFX("WaterBossSFX");
             Destroy(spellz[i], 2.0f);
         }
             

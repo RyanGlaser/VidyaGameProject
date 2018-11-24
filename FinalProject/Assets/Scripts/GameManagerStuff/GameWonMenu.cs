@@ -10,8 +10,7 @@ public class GameWonMenu : MonoBehaviour {
     public GameObject gameWinMenuUI;
     private PlayerHealthManager playerHealth;
 
-    AudioSource sourceSelect;
-    AudioSource sourceVictory;
+    private SoundManager dj;
 
     // Use this for initialization
     void Start()
@@ -19,11 +18,8 @@ public class GameWonMenu : MonoBehaviour {
         if (!gameOverExists)
         {
             gameOverExists = true;
-            sourceVictory = GameObject.Find("VictorySound").GetComponent<AudioSource>();
-            sourceSelect = GameObject.Find("SelectSound").GetComponent<AudioSource>();
 
-            if (sourceVictory == null || sourceSelect == null)
-                Debug.Log("One of the audio sources in GameWon menu is bad");
+            dj = SoundManager._instance;
             
             DontDestroyOnLoad(transform.gameObject);
         }
@@ -45,7 +41,8 @@ public class GameWonMenu : MonoBehaviour {
     public void Restart()
     {
         gameWinMenuUI.SetActive(false);
-        sourceVictory.Play();
+        dj.PlayMenuEffect();
+        dj.playerAlive = true;
         player.SetActive(true);
         playerHealth.SetMaxHealth();
         GameManager._instance.ResetBosses();
@@ -54,7 +51,7 @@ public class GameWonMenu : MonoBehaviour {
 
     public void Quit()
     {
-        sourceSelect.Play();
+        dj.PlayMenuEffect();
         Application.Quit();
     }
 }

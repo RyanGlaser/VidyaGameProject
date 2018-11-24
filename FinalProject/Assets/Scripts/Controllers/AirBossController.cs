@@ -18,6 +18,7 @@ public class AirBossController : MonoBehaviour
     public float spellSpeed;
     private float castSpellCounter;
     private GameObject[] spellz;
+    private SoundManager dj;
 
     // Use this for initialization
     void Start()
@@ -26,6 +27,7 @@ public class AirBossController : MonoBehaviour
         target = GameObject.FindWithTag("Player").GetComponent<PlayerController>().transform;
         castSpellCounter = timeBetweenCastSpell;
         spellz = new GameObject[4];
+        dj = SoundManager._instance;
     }
 
     // Update is called once per frame
@@ -77,6 +79,7 @@ public class AirBossController : MonoBehaviour
                     spellz[i].GetComponent<Rigidbody2D>().velocity = (spellDirections[i].position - spellSpawnPositions[i].position) * spellSpeed;
                     break;
             }
+            dj.BossAttackSFX("AirBossSFX");
             Destroy(spellz[i], 3.0f);
         }
     }

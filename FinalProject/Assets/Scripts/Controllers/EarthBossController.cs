@@ -14,17 +14,15 @@ public class EarthBossController : MonoBehaviour
     private float castSpellCounter;
     public GameObject spellPrefab;
     public Transform spellSpawnPos;
+    private SoundManager dj;
     public float spellSpeed;
-    private AudioSource EarthSpellSFX;
-    private AudioSource EarthMusic;
 
     // Use this for initialization
     void Start()
     {
         anim = GetComponent<Animator>();
-        EarthSpellSFX = GameObject.Find("EarthSpellSFX").GetComponent<AudioSource>();
-        EarthMusic = GameObject.Find("EarthMusic").GetComponent<AudioSource>();
         target = GameObject.FindWithTag("Player").GetComponent<PlayerController>().transform;
+        dj = SoundManager._instance;
         castSpellCounter = timeBetweenCastSpell;
     }
 
@@ -60,8 +58,7 @@ public class EarthBossController : MonoBehaviour
     {
         GameObject spell = Instantiate(spellPrefab, spellSpawnPos.position, spellSpawnPos.rotation);
         spell.GetComponent<Rigidbody2D>().velocity = new Vector2(spellDirection.x, spellDirection.y);
-        Debug.Log("Played EarthSpellSFX");
-        EarthSpellSFX.Play();
+        dj.BossAttackSFX("EarthBossSFX");
         Destroy(spell, 3.0f);
     }
 

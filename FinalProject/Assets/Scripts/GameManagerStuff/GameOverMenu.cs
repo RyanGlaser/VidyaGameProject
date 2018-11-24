@@ -10,11 +10,8 @@ public class GameOverMenu : MonoBehaviour
     public GameObject gameOverMenuUI;
     private PlayerHealthManager playerHealth;
     public Transform playerSpawnPos;
-
-    AudioSource sourceSelect;
-    AudioSource sourceVictory;
-    private AudioSource gameOverSound;
-    private static bool NoisePlayed = false;
+    private bool NoisePlayed = false;
+    private SoundManager dj;
 
 	// Use this for initialization
 	void Start ()
@@ -22,18 +19,8 @@ public class GameOverMenu : MonoBehaviour
         if (!gameOverExists)
         {
             gameOverExists = true;
-
-            sourceVictory = GameObject.Find("VictorySound").GetComponent<AudioSource>();
-            sourceSelect = GameObject.Find("SelectSound").GetComponent<AudioSource>();
-            gameOverSound = GameObject.Find("GameOverSound").GetComponent<AudioSource>();
-
-            if (sourceVictory == null || sourceSelect == null || gameOverSound == null)
-                Debug.Log("One of the audio sources in GameOver menu is bad");
-            
-            DontDestroyOnLoad(transform.gameObject);
-            DontDestroyOnLoad(sourceSelect);
-            DontDestroyOnLoad(sourceVictory);
-            DontDestroyOnLoad(gameOverSound);
+            dj = SoundManager._instance;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -49,18 +36,27 @@ public class GameOverMenu : MonoBehaviour
     {
 		if(playerHealth.isAlive == false)
         {
+            Debug.Log("Player dead");
             // I put this here so the death noise plays once -Robbie
             if (!NoisePlayed)
-                PlayDeadNoise();
+            {
+                NoisePlayed = true;
+                Debug.Log("Before OnWinLose");
+                dj.OnWinLose(false);
+                Debug.Log("After OnWinLose");
+            }
+            Debug.Log("Before gameOver UI");
             gameOverMenuUI.SetActive(true);
+            Debug.Log("After gameOver UI");
         }
+
 	}
 
     public void Restart()
     {
         gameOverMenuUI.SetActive(false);
-        sourceVictory.Play();
-
+        dj.PlayMenuEffect();
+        dj.playerAlive = true;
         player.SetActive(true);
         playerHealth.SetMaxHealth();
         playerHealth.isAlive = true;
@@ -72,15 +68,8 @@ public class GameOverMenu : MonoBehaviour
 
     public void Quit()
     {
-        sourceSelect.Play();
+        dj.PlayMenuEffect();
         Application.Quit();
     }
 
-    private void PlayDeadNoise()
-    {
-        NoisePlayed = true;
-        Debug.Log("Playing DeadNoise");
-        gameOverSound.Play();
-        Debug.Log("Played DeadNoise");
-    }
 }
