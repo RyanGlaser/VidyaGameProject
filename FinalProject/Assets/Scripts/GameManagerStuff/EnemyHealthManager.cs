@@ -9,6 +9,7 @@ public class EnemyHealthManager : MonoBehaviour {
     public int enemyCurrentHealth;
     public GameObject damageEffect;
     public int bossNum = -1; //for win condition
+    public bool isAlive = true;
 
     /**
      * @author Robbae
@@ -49,6 +50,7 @@ public class EnemyHealthManager : MonoBehaviour {
     {
         enemyCurrentHealth -= damageAmt;
         Instantiate(damageEffect, transform.position, transform.rotation);
+        Destroy(damageEffect, 2.0f);
     }
 
     public void SetMaxHealth()

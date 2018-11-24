@@ -29,6 +29,7 @@ public class HurtPlayerProjectile: MonoBehaviour
                 Instantiate(damageEffect, transform.position, transform.rotation);
                 if(gameObject.tag != "Enemy")
                     Destroy(gameObject);
+                Destroy(damageEffect, 2.0f);
             }
         }
     }
