@@ -8,6 +8,7 @@ public class PlayerHealthManager : MonoBehaviour
     public int playerCurrentHealth;
     public bool isAlive = true;
 
+
 	// Use this for initialization
 	void Start ()
     {
@@ -20,6 +21,7 @@ public class PlayerHealthManager : MonoBehaviour
 		if(playerCurrentHealth <= 0)
         {
             isAlive = false;
+            Debug.Log("isAlive is false");
             gameObject.SetActive(false);
         }
 	}
