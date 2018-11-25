@@ -75,7 +75,7 @@ public class EnemyHealthManager : MonoBehaviour {
 
     public void SpawnHealth()
     {
-        Instantiate(heart, healthSpawnPos.position, healthSpawnPos.rotation);
+         GameObject hearthy = Instantiate(heart, healthSpawnPos.position, healthSpawnPos.rotation);
     }
 
   

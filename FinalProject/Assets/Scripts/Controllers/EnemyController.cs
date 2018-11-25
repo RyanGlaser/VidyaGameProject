@@ -32,10 +32,7 @@ public class EnemyController : MonoBehaviour
         {
             isMoving = true;
             transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-            if(gameObject.name == "WaterTrooper")
-            {
-                CastSpell();
-            }
+            CastSpell();
         }
         else
         {

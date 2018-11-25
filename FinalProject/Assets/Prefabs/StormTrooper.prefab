@@ -147,10 +147,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
-  distanceToAttack: 8
-  spellSpeed: 0
-  timeBetweenCastSpell: 0
-  spellPrefab: {fileID: 0}
+  distanceToAttack: 15
+  spellSpeed: 15
+  timeBetweenCastSpell: 1
+  spellPrefab: {fileID: 1028188798055526, guid: 43443057ce5065f4dbd34a76441db772,
+    type: 2}
 --- !u!114 &114368341973248444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,6 +169,8 @@ MonoBehaviour:
     type: 2}
   bossNum: -1
   isAlive: 1
+  healthSpawnPos: {fileID: 0}
+  heart: {fileID: 0}
 --- !u!114 &114541398866287400
 MonoBehaviour:
   m_ObjectHideFlags: 1
