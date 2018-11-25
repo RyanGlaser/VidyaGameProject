@@ -2550,6 +2550,17 @@ Prefab:
       propertyPath: enemyMaxHealth
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 114273952840812564, guid: 019b9e318d67b09478ab6489ebee976d,
+        type: 2}
+      propertyPath: heart
+      value: 
+      objectReference: {fileID: 1810150467661560, guid: 06c7cd77f1cdf52419fd51e41ed2fa5b,
+        type: 2}
+    - target: {fileID: 114273952840812564, guid: 019b9e318d67b09478ab6489ebee976d,
+        type: 2}
+      propertyPath: healthSpawnPos
+      value: 
+      objectReference: {fileID: 1453580992}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 019b9e318d67b09478ab6489ebee976d, type: 2}
   m_IsPrefabAsset: 0
@@ -32300,6 +32311,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4601223988765512, guid: c3e8455e7c901414a98e333c96b341bf,
     type: 2}
   m_PrefabInternal: {fileID: 1444527670}
+--- !u!1 &1453580991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1453580992}
+  m_Layer: 0
+  m_Name: HealthSpawnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1453580992
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1453580991}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.11, y: -13.36, z: -0.0234375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1634705396
 GameObject:
   m_ObjectHideFlags: 0

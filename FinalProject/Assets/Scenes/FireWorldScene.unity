@@ -83541,6 +83541,34 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1221699587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1221699588}
+  m_Layer: 0
+  m_Name: HealthTeleSpot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1221699588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1221699587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.17, y: -13.06, z: -0.0234375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1239561881
 Prefab:
   m_ObjectHideFlags: 0
@@ -93097,6 +93125,17 @@ Prefab:
       propertyPath: enemyMaxHealth
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 114682265315466040, guid: 448a668c092f10c4eb6c1e9b543d8d78,
+        type: 2}
+      propertyPath: healthSpawnPos
+      value: 
+      objectReference: {fileID: 1221699588}
+    - target: {fileID: 114682265315466040, guid: 448a668c092f10c4eb6c1e9b543d8d78,
+        type: 2}
+      propertyPath: heart
+      value: 
+      objectReference: {fileID: 1810150467661560, guid: 06c7cd77f1cdf52419fd51e41ed2fa5b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 448a668c092f10c4eb6c1e9b543d8d78, type: 2}
   m_IsPrefabAsset: 0
