@@ -17,7 +17,8 @@ public class Projectile : MonoBehaviour
 	void Update ()
     {
         transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime * speed);
-        Destroy(gameObject, 2.0f);
+        if (Vector2.Distance(transform.position, target) < 0.001f)
+            Destroy(gameObject);
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)

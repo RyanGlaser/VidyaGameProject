@@ -35786,7 +35786,7 @@ Prefab:
     - target: {fileID: 114006543395746388, guid: f842e3654377b61478d9160d7bda0018,
         type: 2}
       propertyPath: spellSpeed
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 114518289987871870, guid: f842e3654377b61478d9160d7bda0018,
         type: 2}

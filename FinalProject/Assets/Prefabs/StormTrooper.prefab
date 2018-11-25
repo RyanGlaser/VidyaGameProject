@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114541398866287400}
   m_Layer: 0
   m_Name: StormTrooper
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMaxHealth: 30
   enemyCurrentHealth: 0
-  damageEffect: {fileID: 1387552744867176, guid: ac42da35a05cf5544b43539b2c41296b,
+  damageEffect1: {fileID: 1387552744867176, guid: ac42da35a05cf5544b43539b2c41296b,
     type: 2}
   bossNum: -1
   isAlive: 1

@@ -9118,6 +9118,7 @@ GameObject:
   - component: {fileID: 858350746}
   - component: {fileID: 858350745}
   - component: {fileID: 858350744}
+  - component: {fileID: 858350747}
   m_Layer: 0
   m_Name: FireW_water
   m_TagString: Untagged
@@ -9149,7 +9150,7 @@ TilemapCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.1}
@@ -12965,6 +12966,20 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &858350747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 858350742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f821bccc0d2ce20468df8b15e39099ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 1
+  damageEffect: {fileID: 1387552744867176, guid: ac42da35a05cf5544b43539b2c41296b,
+    type: 2}
 --- !u!1 &905923856
 GameObject:
   m_ObjectHideFlags: 0
@@ -24084,6 +24099,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1387552744867176, guid: ac42da35a05cf5544b43539b2c41296b,
         type: 2}
+    - target: {fileID: 114556079482766458, guid: 448a668c092f10c4eb6c1e9b543d8d78,
+        type: 2}
+      propertyPath: targetSpellSpeed
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 448a668c092f10c4eb6c1e9b543d8d78, type: 2}
   m_IsPrefabAsset: 0
