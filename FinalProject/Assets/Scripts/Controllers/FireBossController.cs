@@ -6,7 +6,6 @@ public class FireBossController : MonoBehaviour
 {
     public float moveSpeed;
     private Animator anim; 
-    private Vector3 moveDir;
     private bool isMoving;
     private Transform target;
 
@@ -51,11 +50,9 @@ public class FireBossController : MonoBehaviour
        {
             isMoving = false;
        }
-        
 
-        anim.SetFloat("MoveX", target.position.x);
-        anim.SetFloat("MoveY", target.position.y);
-        anim.SetBool("isMoving", isMoving);
+        SetAnimation();
+        
     }
 
     public void CastSpell()
@@ -83,5 +80,12 @@ public class FireBossController : MonoBehaviour
             dj.BossAttackSFX("FireBossSFX");
             Destroy(spellz[i], 3.0f);
         }
+    }
+
+    private void SetAnimation()
+    {
+        anim.SetFloat("MoveX", transform.position.x);
+        anim.SetFloat("MoveY", transform.position.y);
+        anim.SetBool("isMoving", isMoving);
     }
 }
