@@ -93092,6 +93092,11 @@ Prefab:
       propertyPath: targetSpellSpeed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 114682265315466040, guid: 448a668c092f10c4eb6c1e9b543d8d78,
+        type: 2}
+      propertyPath: enemyMaxHealth
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 448a668c092f10c4eb6c1e9b543d8d78, type: 2}
   m_IsPrefabAsset: 0
