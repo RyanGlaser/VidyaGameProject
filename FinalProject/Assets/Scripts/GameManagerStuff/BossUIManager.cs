@@ -19,6 +19,11 @@ public class BossUIManager : MonoBehaviour
 	void Update ()
     {
         healthBar.value = enemyHealth.enemyCurrentHealth;
-        HPText.text = "Boss Health: " + enemyHealth.enemyCurrentHealth + "/" + enemyHealth.enemyMaxHealth;
+        if (healthBar.value <= 0)
+        {
+            HPText.text = "Boss Health: " + 0 + "/" + enemyHealth.enemyMaxHealth;
+        }
+        else
+            HPText.text = "Boss Health: " + enemyHealth.enemyCurrentHealth + "/" + enemyHealth.enemyMaxHealth;
     }
 }
