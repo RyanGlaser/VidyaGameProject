@@ -15,6 +15,7 @@ public class AirBossController : MonoBehaviour
     public float timeBetweenCastSpell;
     public GameObject spellPrefab;
     public float spellSpeed;
+    public float targetSpellSpeed;
     private float castSpellCounter;
     private GameObject[] spellz;
     private SoundManager dj;
@@ -42,7 +43,8 @@ public class AirBossController : MonoBehaviour
 
             if (castSpellCounter < 0.0f)
             {
-                CastSpell(); // spell counter is less than zero so we can cast the boss spell
+                Vector2 spellDir = (target.position - transform.position).normalized * targetSpellSpeed;
+                CastSpell(spellDir); // spell counter is less than zero so we can cast the boss spell
                 castSpellCounter = timeBetweenCastSpell;
             }
         }
@@ -54,8 +56,13 @@ public class AirBossController : MonoBehaviour
         SetAnimation();
     }
 
-    public void CastSpell()
+    public void CastSpell(Vector2 spellDirection)
     {
+        GameObject spell = Instantiate(spellPrefab, transform.position, transform.rotation);
+        spell.GetComponent<Rigidbody2D>().velocity = new Vector2(spellDirection.x, spellDirection.y);
+        dj.BossAttackSFX("AirBossSFX");
+        Destroy(spell, 3.0f);
+
         for (int i = 0; i < spellSpawnPositions.Length; i++)
         {
             spellz[i] = (GameObject)Instantiate(spellPrefab, spellSpawnPositions[i].position, Quaternion.identity);
@@ -83,8 +90,8 @@ public class AirBossController : MonoBehaviour
 
     private void SetAnimation()
     {
-        anim.SetFloat("MoveX", target.position.x);
-       // anim.SetFloat("MoveY", target.position.y);
+       // anim.SetFloat("MoveX", target.position.x);
+        anim.SetFloat("MoveY", target.position.y);
         anim.SetBool("isMoving", isMoving);
     }
 }

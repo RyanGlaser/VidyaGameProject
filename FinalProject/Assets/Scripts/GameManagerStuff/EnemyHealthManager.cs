@@ -50,9 +50,15 @@ public class EnemyHealthManager : MonoBehaviour {
 
     public void DamageEnemy(int damageAmt)
     {
-        enemyCurrentHealth -= damageAmt;
-        damageEffectTemp = Instantiate(damageEffect1, transform.position, transform.rotation);
-        Destroy(damageEffectTemp, 2.0f);
+        if (enemyCurrentHealth <= 0)
+            return;
+        else
+        {
+            enemyCurrentHealth -= damageAmt;
+            damageEffectTemp = Instantiate(damageEffect1, transform.position, transform.rotation);
+            Destroy(damageEffectTemp, 2.0f);
+        }
+        
     }
 
     public void SetMaxHealth()

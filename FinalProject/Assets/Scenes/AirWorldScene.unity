@@ -1518,6 +1518,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1387552744867176, guid: ac42da35a05cf5544b43539b2c41296b,
         type: 2}
+    - target: {fileID: 114623069286268082, guid: 019b9e318d67b09478ab6489ebee976d,
+        type: 2}
+      propertyPath: targetSpellSpeed
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 019b9e318d67b09478ab6489ebee976d, type: 2}
   m_IsPrefabAsset: 0

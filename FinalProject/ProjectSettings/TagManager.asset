@@ -8,6 +8,7 @@ TagManager:
   - LocalPlayer
   - Enemy
   - Projectile
+  - WaterEdge
   layers:
   - Default
   - TransparentFX
