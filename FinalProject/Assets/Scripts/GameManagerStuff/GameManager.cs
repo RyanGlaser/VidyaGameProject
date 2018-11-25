@@ -81,4 +81,41 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
+    public bool IsBossAlive(string worldname)
+    {
+        switch (worldname)
+        {
+            case "Main":
+                Debug.Log("No Boss in Main scene");
+                break;
+
+            case "WaterWorldScene":
+                if (BossWinConditions[0] == true)
+                    return true;
+                break;
+
+            case "EarthWorldScene":
+                if (BossWinConditions[1] == true)
+                    return true;
+                break;
+
+            case "FireWorldScene":
+                if (BossWinConditions[2] == true)
+                    return true;
+                break;
+
+            case "AirWorldScene":
+                if (BossWinConditions[3] == true)
+                    return true;
+                break;
+
+            default:
+                Debug.Log("Scene name unknown in GameManager.CheckBoss()");
+                break;
+        }
+
+        //return false if boss is not dead, or if scene is not found (less likely)
+        return false;
+    }
+
 }

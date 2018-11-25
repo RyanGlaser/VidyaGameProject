@@ -1400,6 +1400,74 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &784128805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 784128808}
+  - component: {fileID: 784128807}
+  - component: {fileID: 784128806}
+  m_Layer: 0
+  m_Name: GateSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &784128806
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 784128805}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.13451111, y: 0.6053009}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3865006, y: 0.2032795}
+  m_EdgeRadius: 0
+--- !u!114 &784128807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 784128805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d1ae69e58c9e14b80dc722b8f82b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPos: {fileID: 784128808}
+  gate: {fileID: 1828220421243254, guid: 2a85d012d34d74ca18228b80c0b15cdb, type: 2}
+--- !u!4 &784128808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 784128805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.34, y: -11.12, z: 8.865234}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &797739115
 Prefab:
   m_ObjectHideFlags: 0
@@ -1444,6 +1512,12 @@ Prefab:
       propertyPath: bossNum
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114273952840812564, guid: 019b9e318d67b09478ab6489ebee976d,
+        type: 2}
+      propertyPath: damageEffect1
+      value: 
+      objectReference: {fileID: 1387552744867176, guid: ac42da35a05cf5544b43539b2c41296b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 019b9e318d67b09478ab6489ebee976d, type: 2}
   m_IsPrefabAsset: 0

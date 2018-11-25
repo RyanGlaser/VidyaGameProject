@@ -60,6 +60,7 @@ public class GameOverMenu : MonoBehaviour
         player.SetActive(true);
         playerHealth.SetMaxHealth();
         playerHealth.isAlive = true;
+        GameManager._instance.ResetBosses();
 
         NoisePlayed = false;
         player.transform.position = playerSpawnPos.position;

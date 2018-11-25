@@ -24078,14 +24078,15 @@ Prefab:
       propertyPath: bossNum
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114682265315466040, guid: 448a668c092f10c4eb6c1e9b543d8d78,
+        type: 2}
+      propertyPath: damageEffect1
+      value: 
+      objectReference: {fileID: 1387552744867176, guid: ac42da35a05cf5544b43539b2c41296b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 448a668c092f10c4eb6c1e9b543d8d78, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1522848163 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1492192294525622, guid: 448a668c092f10c4eb6c1e9b543d8d78,
-    type: 2}
-  m_PrefabInternal: {fileID: 1522848162}
 --- !u!1 &1542330943
 GameObject:
   m_ObjectHideFlags: 0
@@ -24115,8 +24116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPos: {fileID: 1542330945}
-  gate: {fileID: 1621402512203134, guid: 7703d53abe66bcd41a2ea9907eb77de3, type: 2}
-  enemy: {fileID: 1522848163}
+  gate: {fileID: 1828220421243254, guid: 2a85d012d34d74ca18228b80c0b15cdb, type: 2}
 --- !u!4 &1542330945
 Transform:
   m_ObjectHideFlags: 0
