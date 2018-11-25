@@ -49,9 +49,7 @@ public class EarthBossController : MonoBehaviour
             isMoving = false;
         }
 
-        anim.SetFloat("MoveX", transform.position.x);
-        anim.SetFloat("MoveY", transform.position.y);
-        anim.SetBool("isMoving", isMoving);
+        SetAnimation();
     }
 
     public void CastSpell(Vector2 spellDirection)
@@ -62,4 +60,10 @@ public class EarthBossController : MonoBehaviour
         Destroy(spell, 3.0f);
     }
 
+    private void SetAnimation()
+    {
+        anim.SetFloat("MoveX", transform.position.x);
+        anim.SetFloat("MoveY", transform.position.y);
+        anim.SetBool("isMoving", isMoving);
+    }
 }

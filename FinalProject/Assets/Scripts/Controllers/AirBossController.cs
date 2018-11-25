@@ -6,7 +6,6 @@ public class AirBossController : MonoBehaviour
 {
     public float moveSpeed;
     private Animator anim;
-    private Vector3 moveDir;
     private bool isMoving;
     private Transform target;
 
@@ -52,9 +51,7 @@ public class AirBossController : MonoBehaviour
             isMoving = false;
         }
 
-        anim.SetFloat("MoveX", target.position.x);
-        anim.SetFloat("MoveY", target.position.y);
-        anim.SetBool("isMoving", isMoving);
+        SetAnimation();
     }
 
     public void CastSpell()
@@ -82,5 +79,12 @@ public class AirBossController : MonoBehaviour
             dj.BossAttackSFX("AirBossSFX");
             Destroy(spellz[i], 3.0f);
         }
+    }
+
+    private void SetAnimation()
+    {
+        anim.SetFloat("MoveX", target.position.x);
+       // anim.SetFloat("MoveY", target.position.y);
+        anim.SetBool("isMoving", isMoving);
     }
 }
