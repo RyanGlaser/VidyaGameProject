@@ -23,11 +23,16 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if(collision.gameObject.tag != "Player" && collision.gameObject.tag != "WaterEdge")
         {
-            collision.gameObject.GetComponent<EnemyHealthManager>().DamageEnemy(damageAmount);
+            if (collision.gameObject.tag == "Enemy")
+            {
+                collision.gameObject.GetComponent<EnemyHealthManager>().DamageEnemy(damageAmount);
+                Destroy(gameObject);
+            }
             Destroy(gameObject);
         }
+        
     }
 
 }

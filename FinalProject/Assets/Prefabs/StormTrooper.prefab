@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114010870790930078}
   - component: {fileID: 114368341973248444}
   - component: {fileID: 114541398866287400}
+  - component: {fileID: 61136982397536254}
   m_Layer: 0
   m_Name: StormTrooper
   m_TagString: Enemy
@@ -40,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1423087173168394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.83, y: 8.71, z: 0}
+  m_LocalPosition: {x: 0.23937628, y: -7.0633116, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,6 +67,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!61 &61136982397536254
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1423087173168394}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.024170399, y: 0.008056164}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4375, y: 2.625}
+    newSize: {x: 1.4375, y: 2.625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.9370201, y: 2.931157}
+  m_EdgeRadius: 0
 --- !u!61 &61350209845341580
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -121,6 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
+  distanceToAttack: 8
+  spellSpeed: 0
+  timeBetweenCastSpell: 0
+  spellPrefab: {fileID: 0}
 --- !u!114 &114368341973248444
 MonoBehaviour:
   m_ObjectHideFlags: 1

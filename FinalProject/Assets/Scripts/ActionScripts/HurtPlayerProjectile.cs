@@ -7,8 +7,6 @@ public class HurtPlayerProjectile: MonoBehaviour
     public int damageAmount;
     public GameObject damageEffect;
 
-    private GameObject damageEffectTemp;
-
 	// Use this for initialization
 	void Start ()
     {
@@ -23,18 +21,15 @@ public class HurtPlayerProjectile: MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       if(collision.gameObject.tag != "Enemy")
+       if(collision.gameObject.tag != "Enemy" && collision.gameObject.tag != "WaterEdge" )
         {
-            if (collision.gameObject.name == "Player")
+            if (collision.gameObject.tag == "Player")
             {
                 collision.gameObject.GetComponent<PlayerHealthManager>().DamagePlayer(damageAmount);
-                damageEffectTemp = Instantiate(damageEffect, transform.position, transform.rotation);
-
-                if(gameObject.tag != "Enemy")
-                    Destroy(gameObject);
-                
+                GameObject damageEffectTemp = Instantiate(damageEffect, transform.position, transform.rotation);
                 Destroy(damageEffectTemp, 2.0f);
             }
+            Destroy(gameObject);
         }
     }
 }
