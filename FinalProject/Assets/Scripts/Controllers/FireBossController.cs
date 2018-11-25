@@ -91,8 +91,8 @@ public class FireBossController : MonoBehaviour
 
     private void SetAnimation()
     {
-        anim.SetFloat("MoveX", transform.position.x);
-        anim.SetFloat("MoveY", transform.position.y);
+        anim.SetFloat("MoveX", target.position.x);
+        anim.SetFloat("MoveY", target.position.y);
         anim.SetBool("isMoving", isMoving);
     }
 }

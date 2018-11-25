@@ -10,7 +10,8 @@ public class EnemyHealthManager : MonoBehaviour {
     public GameObject damageEffect1;
     public int bossNum = -1; //for win condition
     public bool isAlive = true;
-
+    public Transform healthSpawnPos;
+    public GameObject heart;
     private GameObject damageEffectTemp;
 
     /**
@@ -43,6 +44,7 @@ public class EnemyHealthManager : MonoBehaviour {
                 Debug.Log("Killing boss: " + bossNum);
                 GameManager._instance.BossDown(bossNum);
                 Debug.Log("Boss killed.");
+                SpawnHealth();
             }
         }
 
@@ -69,6 +71,11 @@ public class EnemyHealthManager : MonoBehaviour {
     public void HealEnemy(int healAmt)
     {
         enemyCurrentHealth += healAmt;
+    }
+
+    public void SpawnHealth()
+    {
+         GameObject hearthy = Instantiate(heart, healthSpawnPos.position, healthSpawnPos.rotation);
     }
 
   
