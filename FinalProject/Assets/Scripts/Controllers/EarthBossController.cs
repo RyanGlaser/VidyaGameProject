@@ -56,7 +56,7 @@ public class EarthBossController : MonoBehaviour
     {
         GameObject spell = Instantiate(spellPrefab, spellSpawnPos.position, spellSpawnPos.rotation);
         spell.GetComponent<Rigidbody2D>().velocity = new Vector2(spellDirection.x, spellDirection.y);
-        dj.BossAttackSFX("EarthBossSFX");
+        dj.PlaySFX("EarthBossSFX");
         Destroy(spell, 3.0f);
     }
 

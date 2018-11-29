@@ -106,12 +106,12 @@ public class SoundManager : MonoBehaviour
         return -1;
     }
 
-    public void BossAttackSFX(string TrackName)
+    public void PlaySFX(string TrackName)
     {
         if (playerAlive == true)
             soundList[ReturnTrackIndex(TrackName)].Play();
         else
-            Debug.Log("Sound not allowed, cannot play BossAttackSFX(): " + TrackName);
+            Debug.Log("Sound not allowed, cannot execute PlaySFX(): " + TrackName);
     }
 
     public void OnWinLose(bool result)

@@ -5,11 +5,12 @@ using UnityEngine;
 public class HealPlayer : MonoBehaviour
 {
     public int healAmount;
+    private SoundManager dj;
 
 	// Use this for initialization
 	void Start ()
     {
-		
+        dj = SoundManager._instance;
 	}
 	
 	// Update is called once per frame
@@ -22,6 +23,7 @@ public class HealPlayer : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            dj.PlaySFX("Health");
             collision.gameObject.GetComponent<PlayerHealthManager>().HealPlayer(healAmount);
             Destroy(gameObject);
         }
