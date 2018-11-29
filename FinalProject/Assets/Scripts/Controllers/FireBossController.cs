@@ -61,7 +61,7 @@ public class FireBossController : MonoBehaviour
     {
         GameObject spell = Instantiate(spellPrefab, transform.position, transform.rotation);
         spell.GetComponent<Rigidbody2D>().velocity = new Vector2(spellDirection.x, spellDirection.y);
-        dj.BossAttackSFX("FireBossSFX");
+        dj.PlaySFX("FireBossSFX");
         Destroy(spell, 3.0f);
 
         for (int i = 0; i < spellSpawnPositions.Length; i++)
@@ -84,7 +84,7 @@ public class FireBossController : MonoBehaviour
                     spellz[i].GetComponent<Rigidbody2D>().velocity = (spellDirections[i].position - spellSpawnPositions[i].position) * spellSpeed;
                     break;
             }
-            dj.BossAttackSFX("FireBossSFX");
+            dj.PlaySFX("FireBossSFX");
             Destroy(spellz[i], 3.0f);
         }
     }

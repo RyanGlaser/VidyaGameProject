@@ -83,11 +83,12 @@ public class GameManager : MonoBehaviour
 
     public bool IsBossAlive(string worldname)
     {
+        Debug.Log("In GameManager.IsBossAlive()");
         switch (worldname)
         {
             case "Main":
                 Debug.Log("No Boss in Main scene");
-                break;
+                return true;
 
             case "WaterWorldScene":
                 if (BossWinConditions[0] == true)

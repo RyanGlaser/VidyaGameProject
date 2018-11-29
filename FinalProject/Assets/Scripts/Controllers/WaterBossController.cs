@@ -91,7 +91,7 @@ public class WaterBossController : MonoBehaviour
     {
         GameObject spell = Instantiate(spellPrefab, transform.position, transform.rotation);
         spell.GetComponent<Rigidbody2D>().velocity = new Vector2(spellDirection.x, spellDirection.y);
-        dj.BossAttackSFX("WaterBossSFX");
+        dj.PlaySFX("WaterBossSFX");
         Destroy(spell, 3.0f);
 
         for (int i = 0; i < spellSpawnPositions.Length; i++)
@@ -126,7 +126,7 @@ public class WaterBossController : MonoBehaviour
                     spellz[i].GetComponent<Rigidbody2D>().velocity = (spellSpawnPositions[i].position - transform.position) * spellSpeed;
                     break;
             }
-            dj.BossAttackSFX("WaterBossSFX");
+            dj.PlaySFX("WaterBossSFX");
             Destroy(spellz[i], 2.0f);
         }
             

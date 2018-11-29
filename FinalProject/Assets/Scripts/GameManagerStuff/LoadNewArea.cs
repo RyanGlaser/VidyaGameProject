@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 public class LoadNewArea : MonoBehaviour
 {
     public string levelToLoad;
+    private GameManager gameManager;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "Player")
+        gameManager = GameManager._instance;
+        //checks to see if level has NOT been beaten, and if we are a player
+        //if so, teleport
+        if(gameManager.IsBossAlive(levelToLoad) && collision.gameObject.name == "Player")
         {
             SceneManager.LoadScene(levelToLoad);
         }

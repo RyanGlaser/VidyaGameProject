@@ -58,7 +58,7 @@ public class EnemyController : MonoBehaviour
             Vector2 spellDir = (target.position - transform.position).normalized * spellSpeed;
             GameObject spell = Instantiate(spellPrefab, transform.position, transform.rotation);
             spell.GetComponent<Rigidbody2D>().velocity = new Vector2(spellDir.x, spellDir.y);
-            dj.BossAttackSFX("WaterBossSFX");
+            dj.PlaySFX("WaterBossSFX");
             Destroy(spell, 3.0f);
             castSpellCounter = timeBetweenCastSpell;
         }
