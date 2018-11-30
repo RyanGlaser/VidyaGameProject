@@ -12,7 +12,7 @@ public class PlayerStartPoint : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        /*
+        
         if (!startPointExists)
         {
             startPointExists = true;
@@ -22,7 +22,7 @@ public class PlayerStartPoint : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        */
+        
         player = FindObjectOfType<PlayerController>(); 
         player.transform.position = transform.position; // moves the player to our starting point in a scence
         player.lastMove = startDirection;
